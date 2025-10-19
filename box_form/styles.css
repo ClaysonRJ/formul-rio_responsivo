@@ -1,0 +1,218 @@
+:root {
+  --bg-gradient: radial-gradient(circle at 10% 20%, #c084fc, #6366f1);
+  --card-bg: rgba(15, 23, 42, 0.85);
+  --border-color: rgba(148, 163, 184, 0.25);
+  --text-color: #f8fafc;
+  --muted-text: #cbd5f5;
+  --accent: #22d3ee;
+  --accent-dark: #0ea5e9;
+  --danger: #ef4444;
+  --font-stack: "Inter", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-stack);
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.page {
+  width: min(720px, 100%);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 40px 60px rgba(15, 23, 42, 0.35);
+}
+
+.card-header {
+  padding: 2.75rem 3rem 1.5rem;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), transparent);
+}
+
+.card-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-header p {
+  color: var(--muted-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#box-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0 3rem 3rem;
+}
+
+.steps {
+  position: relative;
+  min-height: 220px;
+}
+
+.step {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.step.active {
+  display: flex;
+}
+
+.step h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.step label {
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.step input,
+.step select {
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step input:focus,
+.step select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.progress {
+  width: 100%;
+  height: 6px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  transition: width 0.3s ease;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.85rem 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: var(--text-color);
+}
+
+button.primary:not(:disabled):hover,
+button.secondary:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(14, 165, 233, 0.25);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--muted-text);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.success-message {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.success-message h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  color: var(--muted-text);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .card-header,
+  #box-form {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .card-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  button {
+    width: 100%;
+  }
+}

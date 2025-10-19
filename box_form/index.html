@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário em Caixas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="card" id="card">
+        <header class="card-header">
+          <h1>Bem-vindo! 👋</h1>
+          <p>
+            Responda às perguntas a seguir e enviaremos seus dados para o nosso
+            time.
+          </p>
+        </header>
+        <form id="box-form">
+          <div class="steps" id="steps"></div>
+          <footer class="card-footer">
+            <div class="progress" aria-hidden="true">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="actions">
+              <button type="button" class="secondary" id="back-btn" disabled>
+                Voltar
+              </button>
+              <button type="button" class="primary" id="next-btn">
+                Próximo
+              </button>
+            </div>
+          </footer>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

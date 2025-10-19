@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário Tela Inteira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="form-wrapper">
+      <form id="fullpage-form">
+        <section class="question" data-step="0">
+          <div class="question-content">
+            <label for="full-name">Qual é o seu nome completo?</label>
+            <input type="text" id="full-name" name="fullName" required />
+            <button type="button" class="next-btn">Próxima pergunta</button>
+          </div>
+        </section>
+        <section class="question" data-step="1">
+          <div class="question-content">
+            <label for="email">Qual é o seu e-mail?</label>
+            <input type="email" id="email" name="email" required />
+            <button type="button" class="next-btn">Próxima pergunta</button>
+          </div>
+        </section>
+        <section class="question" data-step="2">
+          <div class="question-content">
+            <label for="phone">Qual é o seu telefone?</label>
+            <input type="tel" id="phone" name="phone" required />
+            <button type="button" class="next-btn">Próxima pergunta</button>
+          </div>
+        </section>
+        <section class="question" data-step="3">
+          <div class="question-content">
+            <label for="state">Em qual estado você está?</label>
+            <input type="text" id="state" name="state" required />
+            <button type="button" class="next-btn">Próxima pergunta</button>
+          </div>
+        </section>
+        <section class="question" data-step="4">
+          <div class="question-content">
+            <label for="city">Em qual cidade você está?</label>
+            <input type="text" id="city" name="city" required />
+            <button type="button" class="next-btn">Próxima pergunta</button>
+          </div>
+        </section>
+        <section class="question" data-step="5">
+          <div class="question-content">
+            <label for="cnpj">Informe o CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj" required />
+            <button type="submit" class="submit-btn">Enviar dados</button>
+          </div>
+        </section>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
