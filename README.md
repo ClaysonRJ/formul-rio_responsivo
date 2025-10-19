@@ -1,2 +1,2 @@
-# formul-rio_responsivo
+# formulario_responsivo
 Formulário dinâmico para inserção nas paginas do cliente
